@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2010-06-21 20:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Preferred-Encodings: utf-8 latin1\n"
+
+#: ./browser/control.py:64
+msgid "Accion cancelled"
+msgstr ""
+
+#: ./browser/control.py:61
+msgid "Cancel"
+msgstr ""
+
+#. Default: "Lock"
+#: ./profiles/default/actions.xml
+msgid "Lock"
+msgstr ""
+
+#. Default: "Lock as structural content"
+#: ./profiles/default/actions.xml
+msgid "Lock as structural content"
+msgstr ""
+
+#: ./browser/control.py:47
+msgid "Lock this object as 'Structural content'"
+msgstr ""
+
+#: ./browser/control.py:51
+msgid "Save"
+msgstr ""
+
+#: ./browser/control.py:57
+msgid "The content was locked as 'Structual content'. This object can't be modified unless it is unlocked previously"
+msgstr ""
+
+#: ./browser/control.py:87
+msgid "The object was unlocked and can now could be modified"
+msgstr ""
+
+#: ./browser/control.py:80
+msgid "This object is not locked"
+msgstr ""
+
+#: ./browser/control.py:48
+msgid "To lock this object as 'Structural content' click on 'Save'. If you are unsure about this action click on 'Cancel'."
+msgstr ""
+
+#: ./browser/control.py:71
+msgid "To unlock this 'Structural content' object click on 'Save'. Remember that this could generate inconsistencies in the portal. If you are unsure about this action click on 'Cancel'."
+msgstr ""
+
+#. Default: "Unlock"
+#: ./profiles/default/actions.xml
+msgid "Unlock"
+msgstr ""
+
+#. Default: "Unlock structural content"
+#: ./profiles/default/actions.xml
+msgid "Unlock structural content"
+msgstr ""
+
+#: ./browser/control.py:70
+msgid "Unlock this structural content object"
+msgstr ""
+
+#. Default: "To modified this object a Site Manager has to unlock this first."
+#: ./browser/lockinfo.pt:9
+msgid "info_how_modify"
+msgstr ""
+
+#. Default: "This Object is locked as 'Structural content'. For this reason can't be edited, deleted or modified in any way."
+#: ./browser/lockinfo.pt:6
+msgid "info_locked"
+msgstr ""
+
+#. Default: "Locked"
+#: ./browser/lockinfo.pt:4
+msgid "label_locked"
+msgstr ""
+

@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0'
+version = '1.0a1'
 
 setup(name='yaco.structuralcontent',
       version=version,
@@ -25,6 +25,7 @@ setup(name='yaco.structuralcontent',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'plone.app.z3cform',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

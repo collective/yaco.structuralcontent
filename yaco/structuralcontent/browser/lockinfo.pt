@@ -1,0 +1,13 @@
+<dl class="portalMessage info"
+     i18n:domain="yaco.structuralcontent">
+
+    <dt i18n:translate="label_locked">Locked</dt>
+    <dd>
+        <p i18n:translate="info_locked">
+          This Object is locked as 'Structural content'. For this reason can't be edited, deleted or modified in any way.
+        </p>
+        <p i18n:translate="info_how_modify">
+          To modified this object a Site Manager has to unlock this first.
+        </p>
+    </dd>
+</dl>
