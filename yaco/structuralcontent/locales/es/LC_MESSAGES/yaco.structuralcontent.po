@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0a\n"
-"POT-Creation-Date: 2010-06-21 20:48+0000\n"
+"POT-Creation-Date: 2010-06-23 03:22+0000\n"
 "PO-Revision-Date: 2010-06-21 17:05+3000\n"
 "Last-Translator: Juan A. Diaz<jdiaz@menttes.com>\n"
 "MIME-Version: 1.0\n"
@@ -28,17 +28,17 @@ msgstr "Bloquear"
 msgid "Lock as structural content"
 msgstr "Bloquear como contenido estructural"
 
-#: ./browser/control.py:47
+#: ./browser/control.py:48
 msgid "Lock this object as 'Structural content'"
 msgstr "Bloquear este objecto como 'Contenido estructural'"
 
-#: ./browser/control.py:51
+#: ./browser/control.py:52
 msgid "Save"
 msgstr "Guardar"
 
-#: ./browser/control.py:57
-msgid "The content was locked as 'Structual content'. This object can't be modified unless it is unlocked previously"
-msgstr "El contenido ha sido bloqueado como 'Contenido estructural'. Este objecto no puede ser modificado a menos que sea desbloqueado previamente"
+#: ./browser/control.py:58
+msgid "The content was locked as 'Structual content'"
+msgstr "El contenido ha sido bloqueado como 'Contenido estructural'"
 
 #: ./browser/control.py:87
 msgid "The object was unlocked and can now could be modified"
@@ -48,7 +48,7 @@ msgstr "Este objecto ha sido desbloquedo y ahora puede ser modificado"
 msgid "This object is not locked"
 msgstr "Este objecto no se encuentra bloqueado"
 
-#: ./browser/control.py:48
+#: ./browser/control.py:49
 msgid "To lock this object as 'Structural content' click on 'Save'. If you are unsure about this action click on 'Cancel'."
 msgstr "Para bloquear este objecto como 'Contenido Structural' presione en 'Guardar'. Si no esta seguro acerca de esta acción presione en 'Cancelar'."
 

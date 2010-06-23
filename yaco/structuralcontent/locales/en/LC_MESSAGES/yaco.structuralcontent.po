@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-06-21 20:48+0000\n"
+"POT-Creation-Date: 2010-06-23 03:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -28,16 +28,16 @@ msgstr ""
 msgid "Lock as structural content"
 msgstr ""
 
-#: ./browser/control.py:47
+#: ./browser/control.py:48
 msgid "Lock this object as 'Structural content'"
 msgstr ""
 
-#: ./browser/control.py:51
+#: ./browser/control.py:52
 msgid "Save"
 msgstr ""
 
-#: ./browser/control.py:57
-msgid "The content was locked as 'Structual content'. This object can't be modified unless it is unlocked previously"
+#: ./browser/control.py:58
+msgid "The content was locked as 'Structual content'"
 msgstr ""
 
 #: ./browser/control.py:87
@@ -48,7 +48,7 @@ msgstr ""
 msgid "This object is not locked"
 msgstr ""
 
-#: ./browser/control.py:48
+#: ./browser/control.py:49
 msgid "To lock this object as 'Structural content' click on 'Save'. If you are unsure about this action click on 'Cancel'."
 msgstr ""
 

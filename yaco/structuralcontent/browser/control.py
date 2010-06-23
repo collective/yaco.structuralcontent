@@ -55,8 +55,7 @@ class LockForm(form.Form):
         alsoProvides(self.context, IStructuralContent)
         self.context.reindexObject(idxs=['object_provides'])
         plone_utils = getToolByName(self.context, 'plone_utils')
-        plone_utils.addPortalMessage(_(u"The content was locked as 'Structual content'. "
-                                        "This object can't be modified unless it is unlocked previously"))
+        plone_utils.addPortalMessage(_(u"The content was locked as 'Structual content'"))
         self.request.response.redirect(self.context.absolute_url())
 
     @button.buttonAndHandler(_(u'Cancel'))

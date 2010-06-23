@@ -5,28 +5,22 @@ import unittest
 #from zope.component import testing
 from Testing import ZopeTestCase as ztc
 
+from Products.Five import zcml
 from Products.Five import fiveconfigure
 from Products.PloneTestCase import PloneTestCase as ptc
-from Products.PloneTestCase.layer import PloneSite
-ptc.setupPloneSite()
+from Products.PloneTestCase.layer import onsetup
 
-import yaco.structuralcontent
+@onsetup
+def setup_product():
+    """Set up the package and its dependencies."""
 
+    fiveconfigure.debug_mode = True
+    import yaco.structuralcontent
+    zcml.load_config('configure.zcml', yaco.structuralcontent)
+    fiveconfigure.debug_mode = False
 
-class TestCase(ptc.PloneTestCase):
-
-    class layer(PloneSite):
-
-        @classmethod
-        def setUp(cls):
-            fiveconfigure.debug_mode = True
-            ztc.installPackage(yaco.structuralcontent)
-            fiveconfigure.debug_mode = False
-
-        @classmethod
-        def tearDown(cls):
-            pass
-
+setup_product()
+ptc.setupPloneSite(products=['yaco.structuralcontent'])
 
 def test_suite():
     return unittest.TestSuite([
@@ -42,9 +36,9 @@ def test_suite():
 
 
         # Integration tests that use PloneTestCase
-        #ztc.ZopeDocFileSuite(
-        #    'README.txt', package='yaco.structuralcontent',
-        #    test_class=TestCase),
+        ztc.ZopeDocFileSuite(
+            'README.txt', package='yaco.structuralcontent',
+            test_class=ptc.FunctionalTestCase),
 
         #ztc.FunctionalDocFileSuite(
         #    'browser.txt', package='yaco.structuralcontent',
