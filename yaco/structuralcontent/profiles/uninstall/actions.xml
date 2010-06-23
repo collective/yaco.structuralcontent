@@ -1,0 +1,8 @@
+<object name="portal_actions" meta_type="Plone Actions Tool">
+
+    <object name="object_buttons" meta_type="CMF Action Category">
+        <object name="sc_lock" meta_type="CMF Action" remove="True" />
+        <object name="sc_unlock" meta_type="CMF Action" remove="True" />
+    </object>
+
+</object>

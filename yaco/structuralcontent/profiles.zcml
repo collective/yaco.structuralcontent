@@ -3,20 +3,22 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="yaco.structuralcontent">
 
-  <genericsetup:registerProfile
-      name="default"
-      title="Structural Content"
-      directory="profiles/default"
-      description="Installs the yaco.structuralcontent package"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
+    <genericsetup:registerProfile
+        name="default"
+        title="Structural Content"
+        directory="profiles/default"
+        description="Installs the yaco.structuralcontent package"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        />
 
-  <genericsetup:registerProfile
-      name="uninstall"
-      title="Structural Content - Uninstall Profile"
-      directory="profiles/uninstall"
-      description="Removes the yaco.structuralcontent package"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
+    <genericsetup:registerProfile
+        name="uninstall"
+        title="Structural Content - Uninstall Profile"
+        directory="profiles/uninstall"
+        description="Removes the yaco.structuralcontent package"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        />
 
 </configure>

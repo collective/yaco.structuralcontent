@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<import-steps>
+        <import-step
+                id="structural_content_uninstall"
+                version="20100623-01"
+                handler="yaco.structuralcontent.setuphandlers.uninstallVarious"
+                title="Remove marker interfaces and locks">
+                Remove marker interfaces and locks
+        </import-step>
+</import-steps>
+

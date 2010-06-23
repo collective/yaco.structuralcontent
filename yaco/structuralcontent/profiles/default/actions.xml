@@ -2,7 +2,7 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
     <object name="object_buttons" meta_type="CMF Action Category">
-        <object name="dts_enable" meta_type="CMF Action" i18n:domain="yaco.structuralcontent">
+        <object name="sc_lock" meta_type="CMF Action" i18n:domain="yaco.structuralcontent">
             <property name="title" i18n:translate="">Lock</property>
             <property name="description" i18n:translate="">Lock as structural content</property>
             <property name="url_expr">string:$object_url/@@structuralcontent-lock</property>
@@ -14,7 +14,7 @@
             <property name="visible">True</property>
         </object>
 
-        <object name="dts_disable" meta_type="CMF Action" i18n:domain="yaco.structuralcontent">
+        <object name="sc_unlock" meta_type="CMF Action" i18n:domain="yaco.structuralcontent">
             <property name="title" i18n:translate="">Unlock</property>
             <property name="description" i18n:translate="">Unlock structural content</property>
             <property name="url_expr">string:$object_url/@@structuralcontent-unlock</property>
