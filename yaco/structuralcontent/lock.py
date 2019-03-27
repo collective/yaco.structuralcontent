@@ -1,7 +1,13 @@
 # -*- coding utf8 -*-
 from plone.locking.interfaces import ILockable
-from webdav.LockItem import MAXTIMEOUT
 from yaco.structuralcontent.interfaces import STRUCTURALCONTENT_LOCK
+
+try:
+    # Zope 2
+    from webdav.LockItem import MAXTIMEOUT
+except ImportError:
+    # Zope 4
+    from OFS.LockItem import MAXTIMEOUT
 
 
 __all__ = ["lockContext", "unlockContext", "isLocked"]
