@@ -16,7 +16,7 @@ setup(
     keywords="Lock, structural, content",
     author="Juan A. Diaz",
     author_email="jdiaz@menttes.com",
-    url="https://svn.plone.org/svn/collective/yaco.structuralcontent",
+    url="https://github.com/collective/yaco.structuralcontent",
     license="GPL",
     packages=find_packages(exclude=["ez_setup"]),
     namespace_packages=["yaco"],
