@@ -1,0 +1,6 @@
+[report]
+include =
+    yaco/*
+omit =
+    */test*
+    */upgrades/*
