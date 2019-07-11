@@ -11,6 +11,7 @@ from z3c.form import field
 from z3c.form import form
 from zope.interface import alsoProvides
 from zope.interface import noLongerProvides
+from plone.locking.interfaces import ITTWLockable
 
 
 class ContentControl(BrowserView):
@@ -26,7 +27,7 @@ class ContentControl(BrowserView):
     def allowLock(self):
         """
         """
-        return IContentish.providedBy(
+        return ITTWLockable.providedBy(
             self.context
         ) and not IStructuralContent.providedBy(self.context)
 
@@ -35,7 +36,9 @@ class ContentControl(BrowserView):
     def allowUnlock(self):
         """
         """
-        return IStructuralContent.providedBy(self.context)
+        return ITTWLockable.providedBy(
+            self.context
+        ) and IStructuralContent.providedBy(self.context)
 
     allowUnlock.__roles__ = None
 
