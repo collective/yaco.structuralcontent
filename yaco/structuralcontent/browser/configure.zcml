@@ -14,14 +14,14 @@
 
     <!-- Activation Views -->
     <browser:page
-        for="*"
+        for="plone.locking.interfaces.ITTWLockable"
         name="structuralcontent-lock"
         class=".control.LockView"
         permission="cmf.ManagePortal"
         />
 
     <browser:page
-        for="*"
+        for="plone.locking.interfaces.ITTWLockable"
         name="structuralcontent-unlock"
         class=".control.UnlockView"
         permission="cmf.ManagePortal"
