@@ -2,6 +2,7 @@
 from plone.locking.interfaces import IRefreshableLockable
 from yaco.structuralcontent.interfaces import STRUCTURALCONTENT_LOCK
 
+
 try:
     # Zope 2
     from webdav.LockItem import MAXTIMEOUT

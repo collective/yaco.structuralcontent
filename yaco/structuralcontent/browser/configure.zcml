@@ -1,39 +1,40 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
-    i18n_domain="yaco.structuralcontent">
+    i18n_domain="yaco.structuralcontent"
+    >
 
-    <!-- This view contains action conditions that control the visibility
+  <!-- This view contains action conditions that control the visibility
         of the activation views-->
-    <browser:page
-        for="*"
-        name="structuralcontent-control"
-        class=".control.ContentControl"
-        permission="zope2.View"
-        />
+  <browser:page
+      name="structuralcontent-control"
+      for="*"
+      class=".control.ContentControl"
+      permission="zope2.View"
+      />
 
-    <!-- Activation Views -->
-    <browser:page
-        for="plone.locking.interfaces.ITTWLockable"
-        name="structuralcontent-lock"
-        class=".control.LockView"
-        permission="cmf.ManagePortal"
-        />
+  <!-- Activation Views -->
+  <browser:page
+      name="structuralcontent-lock"
+      for="plone.locking.interfaces.ITTWLockable"
+      class=".control.LockView"
+      permission="cmf.ManagePortal"
+      />
 
-    <browser:page
-        for="plone.locking.interfaces.ITTWLockable"
-        name="structuralcontent-unlock"
-        class=".control.UnlockView"
-        permission="cmf.ManagePortal"
-        />
+  <browser:page
+      name="structuralcontent-unlock"
+      for="plone.locking.interfaces.ITTWLockable"
+      class=".control.UnlockView"
+      permission="cmf.ManagePortal"
+      />
 
-    <!-- Info Viewlet -->
-    <browser:viewlet
-        name="plone.lockinfo"
-        for="..interfaces.IStructuralContent"
-        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
-        template="lockinfo.pt"
-        permission="cmf.ModifyPortalContent"
-        />
+  <!-- Info Viewlet -->
+  <browser:viewlet
+      name="plone.lockinfo"
+      for="..interfaces.IStructuralContent"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+      template="lockinfo.pt"
+      permission="cmf.ModifyPortalContent"
+      />
 
 </configure>

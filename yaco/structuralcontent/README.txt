@@ -82,7 +82,7 @@ That is true? Lets try to edit
     ...
     LinkNotFoundError
 
-The 'Edit' link is not present, but we can try accesing whit the url and change the title
+The 'Edit' link is not present, but we can try accessing with the url and change the title
 
     >>> folder0_edit_url = folder0_url + '/edit'
     >>> browser.open(folder0_edit_url)
@@ -113,7 +113,7 @@ And can't be cut
     >>> "Picasso is locked and cannot be cut" in browser.contents
     True
 
-We can try to rename too, but it's not posible
+We can try to rename too, but it's not possible
 
     >>> browser.getLink('Rename').click()
     >>> browser.getControl('New Short Name').value = 'garcia-lorca'
@@ -123,6 +123,6 @@ We can try to rename too, but it's not posible
     ...
     NotFound: ...
 
-    # This is a bug in plone? why redirect if wasn't posible rename the object?
+    # This is a bug in plone? why redirect if wasn't possible rename the object?
     >>> # "The following item(s) could not be renamed: /picasso" in browser.contents
     # True

@@ -1,31 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<object name="portal_actions" meta_type="Plone Actions Tool"
-    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+<?xml version="1.0" encoding="utf-8"?>
+<object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        meta_type="Plone Actions Tool"
+        name="portal_actions"
+>
 
-    <object name="object_buttons" meta_type="CMF Action Category">
-        <object name="sc_lock" meta_type="CMF Action" i18n:domain="yaco.structuralcontent">
-            <property name="title" i18n:translate="">Lock</property>
-            <property name="description" i18n:translate="">Lock as structural content</property>
-            <property name="url_expr">string:$object_url/@@structuralcontent-lock</property>
-            <property name="icon_expr"></property>
-            <property name="available_expr">python:path('object/@@structuralcontent-control').allowLock()</property>
-            <property name="permissions">
-                <element value="Manage portal"/>
-            </property>
-            <property name="visible">True</property>
-        </object>
-
-        <object name="sc_unlock" meta_type="CMF Action" i18n:domain="yaco.structuralcontent">
-            <property name="title" i18n:translate="">Unlock</property>
-            <property name="description" i18n:translate="">Unlock structural content</property>
-            <property name="url_expr">string:$object_url/@@structuralcontent-unlock</property>
-            <property name="icon_expr"></property>
-            <property name="available_expr">python:path('object/@@structuralcontent-control').allowUnlock()</property>
-            <property name="permissions">
-                <element value="Manage portal"/>
-            </property>
-            <property name="visible">True</property>
-        </object>
+  <object meta_type="CMF Action Category"
+          name="object_buttons"
+  >
+    <object meta_type="CMF Action"
+            name="sc_lock"
+            i18n:domain="yaco.structuralcontent"
+    >
+      <property name="title"
+                i18n:translate=""
+      >Lock</property>
+      <property name="description"
+                i18n:translate=""
+      >Lock as structural content</property>
+      <property name="url_expr">string:$object_url/@@structuralcontent-lock</property>
+      <property name="icon_expr" />
+      <property name="available_expr">python:path('object/@@structuralcontent-control').allowLock()</property>
+      <property name="permissions">
+        <element value="Manage portal" />
+      </property>
+      <property name="visible">True</property>
     </object>
+
+    <object meta_type="CMF Action"
+            name="sc_unlock"
+            i18n:domain="yaco.structuralcontent"
+    >
+      <property name="title"
+                i18n:translate=""
+      >Unlock</property>
+      <property name="description"
+                i18n:translate=""
+      >Unlock structural content</property>
+      <property name="url_expr">string:$object_url/@@structuralcontent-unlock</property>
+      <property name="icon_expr" />
+      <property name="available_expr">python:path('object/@@structuralcontent-control').allowUnlock()</property>
+      <property name="permissions">
+        <element value="Manage portal" />
+      </property>
+      <property name="visible">True</property>
+    </object>
+  </object>
 
 </object>
