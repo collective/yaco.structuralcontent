@@ -42,7 +42,16 @@ setup(
     zip_safe=False,
     install_requires=[
         "setuptools",
+        "OFS",
+        "Products.CMFCore",
         "plone.app.z3cform",
+        "Products.Five",
+        "plone.locking",
+        "webdav",
+        "z3c.form",
+        "zope.i18nmessageid",
+        "zope.interface",
+        "zope.publisher",
         # -*- Extra requirements: -*-
     ],
     extras_require={
@@ -54,6 +63,11 @@ setup(
             "plone.testing>=5.0.0",
             "plone.app.robotframework[debug]",
             "plone.api",
+            "Products.CMFPlone",
+            "Products.PloneTestCase",
+            "plone.app.dexterity",
+            "plone.browserlayer",
+            "Products.Five",
         ]
     },
     entry_points="""
