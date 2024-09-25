@@ -45,7 +45,6 @@ setup(
         "OFS",
         "Products.CMFCore",
         "plone.app.z3cform",
-        "Products.Five",
         "plone.locking",
         "webdav",
         "z3c.form",
@@ -67,7 +66,6 @@ setup(
             "Products.PloneTestCase",
             "plone.app.dexterity",
             "plone.browserlayer",
-            "Products.Five",
         ]
     },
     entry_points="""
