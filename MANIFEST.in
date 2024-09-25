@@ -1,0 +1,17 @@
+include *.in
+include *.txt
+include .coveragerc
+include base.cfg
+include buildout.cfg
+include test_plone52.cfg
+include test_plone60.cfg
+recursive-include docs *.GPL
+recursive-include docs *.rst
+recursive-include docs *.txt
+recursive-include yaco *.po
+recursive-include yaco *.pot
+recursive-include yaco *.pt
+recursive-include yaco *.sh
+recursive-include yaco *.txt
+recursive-include yaco *.xml
+recursive-include yaco *.zcml

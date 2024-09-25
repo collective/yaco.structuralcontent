@@ -1,4 +1,3 @@
-# -*- coding: utf8 -*-
 from Products.CMFCore.utils import getToolByName
 from yaco.structuralcontent import lock
 from yaco.structuralcontent.interfaces import IStructuralContent
@@ -8,8 +7,7 @@ import logging
 
 
 def uninstallVarious(context):
-    """Remove marker interfaces and locks
-    """
+    """Remove marker interfaces and locks"""
     site = context.getSite()
     portal_catalog = getToolByName(site, "portal_catalog")
     logger = logging.getLogger("yaco.structuralcontent")

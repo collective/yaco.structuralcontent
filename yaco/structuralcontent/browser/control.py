@@ -1,22 +1,18 @@
-# -*- coding:utf8 -*-
 from plone.app.z3cform.layout import wrap_form
-from Products.CMFCore.interfaces import IContentish
+from plone.locking.interfaces import ITTWLockable
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from yaco.structuralcontent import lock
 from yaco.structuralcontent import StructuralContentMessageFactory as _
 from yaco.structuralcontent.interfaces import IStructuralContent
 from z3c.form import button
-from z3c.form import field
 from z3c.form import form
 from zope.interface import alsoProvides
 from zope.interface import noLongerProvides
-from plone.locking.interfaces import ITTWLockable
 
 
 class ContentControl(BrowserView):
-    """ conditions for presenting various actions
-    """
+    """conditions for presenting various actions"""
 
     __allow_access_to_unprotected_subobjects__ = 1
 
@@ -25,8 +21,7 @@ class ContentControl(BrowserView):
         self.request = request
 
     def allowLock(self):
-        """
-        """
+        """ """
         return ITTWLockable.providedBy(
             self.context
         ) and not IStructuralContent.providedBy(self.context)
@@ -34,34 +29,31 @@ class ContentControl(BrowserView):
     allowLock.__roles__ = None
 
     def allowUnlock(self):
-        """
-        """
-        return ITTWLockable.providedBy(
+        """ """
+        return ITTWLockable.providedBy(self.context) and IStructuralContent.providedBy(
             self.context
-        ) and IStructuralContent.providedBy(self.context)
+        )
 
     allowUnlock.__roles__ = None
 
 
 class LockForm(form.Form):
-    label = _(u"Lock this object as 'Structural content'")
+    label = _("Lock this object as 'Structural content'")
     description = _(
-        u"To lock this object as 'Structural content' click on 'Save'. "
+        "To lock this object as 'Structural content' click on 'Save'. "
         "If you are unsure about this action click on 'Cancel'."
     )
 
-    @button.buttonAndHandler(_(u"Save"))
+    @button.buttonAndHandler(_("Save"))
     def handleApply(self, action):
         lock.lockContext(self.context)
         alsoProvides(self.context, IStructuralContent)
         self.context.reindexObject(idxs=["object_provides"])
         plone_utils = getToolByName(self.context, "plone_utils")
-        plone_utils.addPortalMessage(
-            _(u"The content was locked as 'Structual content'")
-        )
+        plone_utils.addPortalMessage(_("The content was locked as 'Structual content'"))
         self.request.response.redirect(self.context.absolute_url())
 
-    @button.buttonAndHandler(_(u"Cancel"))
+    @button.buttonAndHandler(_("Cancel"))
     def handleCancel(self, action):
         plone_utils = getToolByName(self.context, "plone_utils")
         plone_utils.addPortalMessage(_("Accion cancelled"))
@@ -72,14 +64,14 @@ LockView = wrap_form(LockForm)
 
 
 class UnlockForm(form.Form):
-    label = _(u"Unlock this structural content object")
+    label = _("Unlock this structural content object")
     description = _(
-        u"To unlock this 'Structural content' object click on 'Save'. "
+        "To unlock this 'Structural content' object click on 'Save'. "
         "Remember that this could generate inconsistencies in the portal. "
         "If you are unsure about this action click on 'Cancel'."
     )
 
-    @button.buttonAndHandler(_(u"Save"))
+    @button.buttonAndHandler(_("Save"))
     def handleApply(self, action):
         plone_utils = getToolByName(self.context, "plone_utils")
 
@@ -92,11 +84,11 @@ class UnlockForm(form.Form):
         noLongerProvides(self.context, IStructuralContent)
         self.context.reindexObject(idxs=["object_provides"])
         plone_utils.addPortalMessage(
-            _(u"The object was unlocked and can now could be modified")
+            _("The object was unlocked and can now could be modified")
         )
         self.request.response.redirect(self.context.absolute_url())
 
-    @button.buttonAndHandler(_(u"Cancel"))
+    @button.buttonAndHandler(_("Cancel"))
     def handleCancel(self, action):
         plone_utils = getToolByName(self.context, "plone_utils")
         plone_utils.addPortalMessage(_("Accion cancelled"))

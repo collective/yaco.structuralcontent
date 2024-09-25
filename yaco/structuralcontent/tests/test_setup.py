@@ -1,13 +1,14 @@
-# -*- coding: utf-8 -*-
 """Setup tests for this package."""
-from yaco.structuralcontent.testing import (
-    YACO_STRUCTURALCONTENT_INTEGRATION_TESTING,
-)  # noqa: E501
+
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
+from yaco.structuralcontent.testing import (  # noqa: E501
+    YACO_STRUCTURALCONTENT_INTEGRATION_TESTING,
+)
 
 import unittest
+
 
 try:
     from Products.CMFPlone.utils import get_installer
@@ -30,12 +31,12 @@ class TestSetup(unittest.TestCase):
 
     def test_product_installed(self):
         """Test if yaco.structuralcontent is installed."""
-        self.assertTrue(self.installer.isProductInstalled("yaco.structuralcontent"))
+        self.assertTrue(self.installer.is_product_installed("yaco.structuralcontent"))
 
     def test_browserlayer(self):
         """Test that IYacoStructuralcontent is registered."""
-        from yaco.structuralcontent.interfaces import IYacoStructuralcontent
         from plone.browserlayer import utils
+        from yaco.structuralcontent.interfaces import IYacoStructuralcontent
 
         self.assertIn(IYacoStructuralcontent, utils.registered_layers())
 
@@ -52,15 +53,16 @@ class TestUninstall(unittest.TestCase):
             self.installer = api.portal.get_tool("portal_quickinstaller")
         roles_before = api.user.get_roles(TEST_USER_ID)
         setRoles(self.portal, TEST_USER_ID, ["Manager"])
-        self.installer.uninstallProducts(["yaco.structuralcontent"])
+        self.installer.uninstall_product(["yaco.structuralcontent"])
         setRoles(self.portal, TEST_USER_ID, roles_before)
 
     def test_product_uninstalled(self):
         """Test if yaco.structuralcontent is cleanly uninstalled."""
-        self.assertFalse(self.installer.isProductInstalled("yaco.structuralcontent"))
+        self.assertFalse(self.installer.is_product_installed("yaco.structuralcontent"))
 
     def test_browserlayer_removed(self):
         """Test that IYacoStructuralcontent is removed."""
-        from yaco.structuralcontent.interfaces import IYacoStructuralcontent
         from plone.browserlayer import utils
+        from yaco.structuralcontent.interfaces import IYacoStructuralcontent
+
         self.assertNotIn(IYacoStructuralcontent, utils.registered_layers())
